@@ -1,0 +1,14 @@
+#photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.images {
+    height: 220px;
+    object-fit: contain;
+}
+
+.images:hover {
+    filter: brightness(84%);
+}
