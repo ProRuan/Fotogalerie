@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,40 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
+
 <body>
-    
+    <header>
+        <div class="header-left">
+            <div id="menu-container" class="menu-container">
+                <img src="./img/main-menu.png" alt="main-menu" class="main-menu" onclick="flipMenu()">
+            </div>
+            <a href="#" class="notes-group" onclick="showCategory('notes')">
+                <img class="logo" src="./img/logo.png" alt="notepad-logo">
+                <span class="notes">Notizen</span>
+            </a>
+        </div>
+        <a class="header-right">
+            <button id="view-button" class="view-button list-view" onclick="switchView()"></button>
+            <img src="./img/profile.png" alt="profile" class="profile">
+        </a>
+    </header>
+
+    <main>
+        <nav id="menu-bar" class="menu-bar">
+            <a id="notes" href="#" class="menu-link menu-link-active" onclick="showCategory(id)">
+                <img id="notes-img" src="./img/bulb.png" alt="bulb-notes" class="img img-active">
+                <span class="menu-txt">Notizen</span>
+            </a>
+            <a id="trash" href="#" class="menu-link" onclick="showCategory(id)">
+                <img id="trash-img" src="./img/trash.png" alt="trash-notes" class="img">
+                <span class="menu-txt">Papierkorb</span>
+            </a>
+        </nav>
+
+        <section id="notepad" class="notepad">
+            
+        </section>
+    </main>
 </body>
+
 </html>
