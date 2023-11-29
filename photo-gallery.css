@@ -1,14 +1,18 @@
 #photo-gallery {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
-    gap: 4px;
 }
 
-.images {
+
+.image-box {
     height: 220px;
-    object-fit: contain;
+    margin: 4px;
 }
 
-.images:hover {
+.image-box:hover {
     filter: brightness(84%);
+}
+
+.image-box img {
+    object-fit: cover;
 }

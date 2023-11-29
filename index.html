@@ -12,17 +12,15 @@
 
 <body onload="loadImages()">
     <header>
-        <div class="header-left">
-            <div id="menu-container" class="menu-container">
-                <img src="./img/main-menu.png" alt="main-menu" class="main-menu" onclick="flipMenu()">
-            </div>
-            <a href="#" class="notes-group" onclick="showCategory('notes')">
-                <img class="logo" src="./img/logo.png" alt="notepad-logo">
-                <span class="notes">Notizen</span>
-            </a>
-        </div>
+        <a class="header-title">
+            <span class="header-title-txt">
+                <b class="violet">R</b><b class="blue">u</b><b class="green">a</b><b class="orange">n</b><b class="red">s</b>
+            </span>
+            <span class="header-title-txt">
+                Fotos
+            </span>
+        </a>
         <a class="header-right">
-            <button id="view-button" class="view-button list-view" onclick="switchView()"></button>
             <img src="./img/profile.png" alt="profile" class="profile">
         </a>
     </header>
@@ -32,6 +30,18 @@
             <a id="notes" href="#" class="menu-link menu-link-active" onclick="showCategory(id)">
                 <img id="notes-img" src="./img/bulb.png" alt="bulb-notes" class="img img-active">
                 <span class="menu-txt">Notizen</span>
+            </a>
+            <a id="favorites" href="#" class="menu-link" onclick="showCategory(id)">
+                <img id="notes-img" src="./img/bulb.png" alt="bulb-notes" class="img img-active">
+                <span class="menu-txt">Favoriten</span>
+            </a>
+            <a id="bali" href="#" class="menu-link" onclick="showCategory(id)">
+                <img id="notes-img" src="./img/bulb.png" alt="bulb-notes" class="img img-active">
+                <span class="menu-txt">Bali</span>
+            </a>
+            <a id="austria" href="#" class="menu-link" onclick="showCategory(id)">
+                <img id="notes-img" src="./img/bulb.png" alt="bulb-notes" class="img img-active">
+                <span class="menu-txt">Österreich</span>
             </a>
             <a id="trash" href="#" class="menu-link" onclick="showCategory(id)">
                 <img id="trash-img" src="./img/trash.png" alt="trash-notes" class="img">
