@@ -1,12 +1,17 @@
-#photo-gallery {
-    display: none;
+.photo-gallery {
+    margin: 8px;
+    width: calc(100% - 272px);
+    display: flex;
     flex-wrap: wrap;
+    gap: 4px;
 }
 
 
 .image-box {
-    height: 220px;
-    margin: 4px;
+    width: 232px;
+    height: 232px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .image-box:hover {
@@ -14,5 +19,83 @@
 }
 
 .image-box img {
+    object-fit: contain;
+    object-position: center;
+}
+
+.image-viewer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.image-viewer-content {
+    width: calc(100% - 160px);
+    max-width: 1280px;
+    height: calc(100vh - 155px);
+    max-height: 768px;
     object-fit: cover;
+    object-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-none {
+    display: none;
+}
+
+.overflowY-hidden {
+    overflow-y: hidden;
+}
+
+.image-viewer-header {
+    padding: 0 24px;
+    width: calc(100% - 48px);
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-viewer-close-button {
+    font-size: 16px;
+    font-weight: 400px;
+    line-height: 20px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.24);
+    border: unset;
+}
+
+.image-viewer-close-button:hover {
+    background-color: rgba(255, 255, 255, 0.32);
+}
+
+.image-viewer-close-button:disabled {
+    color: lightgray;
+    background-color: rgba(255, 255, 255, 0.16);
+    cursor: unset;
+}
+
+.image-viewer-button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+}
+
+.image-viewer-navigation {
+    padding: 0 24px;
+    width: calc(100% - 48px);
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

@@ -10,11 +10,33 @@
     <script src="script.js"></script>
 </head>
 
-<body onload="loadImages()">
+<body id="body" onload="loadImages()">
+    <div id="image-viewer" class="image-viewer display-none">
+        <div id="image-viewer-header" class="image-viewer-header">
+            <button id="image-viewer-close-button" class="image-viewer-close-button"
+                onclick="closeImage()">Zurück</button>
+            <div id="image-viewer-button-group" class="image-viewer-button-group">
+                <button id="favorite-button" class="image-viewer-close-button" onclick="setFavorites()">
+                    Als Favorit festlegen
+                </button>
+                <button id="delete-button" class="image-viewer-close-button" onclick="moveImage()">
+                    Löschen
+                </button>
+            </div>
+        </div>
+        <div id="image-viewer-content" class="image-viewer-content">
+
+        </div>
+        <div id="image-viewer-navigation" class="image-viewer-navigation">
+            <button id="previous-button" class="image-viewer-close-button" onclick="viewPreviousImage()">Vorheriges</button>
+            <button id="next-button" class="image-viewer-close-button" onclick="viewNextImage()">Nächtes</button>
+        </div>
+    </div>
     <header>
         <a class="header-title">
             <span class="header-title-txt">
-                <b class="violet">R</b><b class="blue">u</b><b class="green">a</b><b class="orange">n</b><b class="red">s</b>
+                <b class="violet">R</b><b class="blue">u</b><b class="green">a</b><b class="orange">n</b><b
+                    class="red">s</b>
             </span>
             <span class="header-title-txt">
                 Fotos
@@ -27,7 +49,7 @@
 
     <main>
         <nav id="menu-bar" class="menu-bar">
-            <a id="notes" href="#" class="menu-link menu-link-active" onclick="showCategory(id)">
+            <a id="photos" href="#" class="menu-link menu-link-active" onclick="showCategory(id)">
                 <img id="notes-img" src="./img/bulb.png" alt="bulb-notes" class="img img-active">
                 <span class="menu-txt">Notizen</span>
             </a>
@@ -50,7 +72,7 @@
         </nav>
 
         <section id="photo-gallery" class="photo-gallery">
-            <!-- <img src="./img/agriculture.jpg" alt="agriculture" class="images"> -->
+
         </section>
     </main>
 </body>
