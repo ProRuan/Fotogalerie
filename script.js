@@ -183,6 +183,9 @@ function loadImages() {
 function showCategory(id) {
     category = id;
     colorLink(id);
+    setCategoryViewer();
+    getFirstViewerIndex();
+    getLastViewerIndex();
     return loadImages();
 }
 
@@ -470,14 +473,85 @@ function isThatNextImageTrash() {
 
 
 function viewPreviousImage() {
-    isThatPreviousImageTrash();
-    viewImage(--deliveredIndex);
-    enableButton('next-button');
+    // isThatPreviousImageTrash();
+    // viewImage(--deliveredIndex);
+    // enableButton('next-button');
+    viewLeftImage(--deliveredIndex);
 }
 
 
 function viewNextImage() {
-    isThatNextImageTrash();
-    viewImage(++deliveredIndex);
-    enableButton('previous-button');
+    // isThatNextImageTrash();
+    // viewImage(++deliveredIndex);
+    // enableButton('previous-button');
+    viewRightImage(++deliveredIndex);
+}
+
+
+function setCategoryViewer() {
+    for (let i = 0; i < images.length; i++) {
+        setIndexOfCategory(i);
+    if (images[i]['category'][indexOfCategory] == category) {
+        images[i]['viewer'] = 'enabled';
+    } else {
+        images[i]['viewer'] = 'disabled';
+    }
+    }
+}
+
+
+function isViewerEnabled(i) {
+    if (images[i]['viewer'] == 'enabled') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+function viewLeftImage(i) {
+    if (isViewerEnabled(i)) {
+        viewImage(i);
+        enableButton('next-button');
+        if (i == firstViewerIndex) {
+            setButtonDisabled('previous-button');
+        }
+    } else {
+        viewPreviousImage(--i);
+    }
+}
+
+
+function viewRightImage(i) {
+    if (isViewerEnabled(i)) {
+        viewImage(i);
+        enableButton('previous-button');
+        if (i == lastViewerIndex) {
+            setButtonDisabled('next-button');
+        }
+    } else {
+        viewNextImage(++i);
+    }
+}
+
+
+let firstViewerIndex = -1;
+
+function getFirstViewerIndex() {
+    for (let i = images.length - 1; i > -1; i--) {
+        if (images[i]['viewer'] == 'enabled') {
+            firstViewerIndex = i;
+        }
+    }
+}
+
+
+let lastViewerIndex = -1;
+
+function getLastViewerIndex() {
+    for (let i = 0; i < images.length; i++) {
+        if (images[i]['viewer'] == 'enabled') {
+            lastViewerIndex = i;
+        }
+    }
 }
