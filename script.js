@@ -225,10 +225,11 @@ function addToFavorites() {
         document.getElementById('favorite-button').innerHTML = 'Schon als Favorit festgelegt';
     } else {
         images[deliveredIndex]['category'].push('favorites');
+        document.getElementById('favorite-button').innerHTML = 'zu Favoriten hinzugefügt';
 
         save();
         loadImages();
-        closeImage();
+        // closeImage();
     }
 }
 
@@ -238,7 +239,7 @@ function removeFromFavorites() {
 
     save();
     loadImages();
-    closeImage();
+    // closeImage();
 }
 
 
@@ -248,6 +249,22 @@ function setFavorites() {
     } else {
         removeFromFavorites();
     }
+}
+
+
+function setFavorite() {
+    if (getTheLastCategory(deliveredIndex) != 'favorites' && getTheLastCategory(deliveredIndex) != 'trash') {
+        images[deliveredIndex]['category'].push('favorites');
+        document.getElementById('favorite-button').innerHTML = 'Von Favoriten entfernen';
+    } else {
+        if (getTheLastCategory(deliveredIndex) == 'favorites') {
+            images[deliveredIndex]['category'].splice(images[deliveredIndex]['category'].length - 1, 1);
+            document.getElementById('favorite-button').innerHTML = 'Zu Favoriten hinzufügen';
+        }
+    }
+
+    save();
+    loadImages();
 }
 
 
@@ -324,6 +341,8 @@ function viewImage(i) {
     removeDisplayNone('image-viewer');
     showImage(i);
     deliveredIndex = i;
+    setFavoriteButton();
+    setDeleteButton();
 }
 
 
@@ -362,7 +381,27 @@ function isThisAFavorite() {
 
 function setFavoriteButton() {
     if (isThisAFavorite()) {
-        document.getElementById('favorite-button').innerHTML = 'zu Favoriten hinzugefügt';
+        document.getElementById('favorite-button').innerHTML = 'von Favoriten entfernen';
+    } else {
+        document.getElementById('favorite-button').innerHTML = 'zu Favoriten hinzufügen';
+    }
+}
+
+
+function isThisTrash() {
+    if (getTheLastCategory(deliveredIndex) == 'trash') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+function setDeleteButton() {
+    if (isThisTrash()) {
+        document.getElementById('delete-button').innerHTML = 'Wiederherstellen';
+    } else {
+        document.getElementById('delete-button').innerHTML = 'Löschen';
     }
 }
 
