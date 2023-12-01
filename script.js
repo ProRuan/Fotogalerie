@@ -336,19 +336,36 @@ function showImage(i) {
 }
 
 
+function setPreviousButton() {
+    if (deliveredIndex == 0) {
+        setButtonDisabled('previous-button');
+    }
+}
+
+
+function setNextButton() {
+    if (deliveredIndex == images.length - 1) {
+        setButtonDisabled('next-button');
+    }
+}
+
+
 function viewImage(i) {
     addOverflowYHidden('body');
     removeDisplayNone('image-viewer');
     showImage(i);
     deliveredIndex = i;
-    setFavoriteButton();
-    setDeleteButton();
+
+    setFavoriteButton();    // funktioniert nicht!!!
+    setDeleteButton();    // funktioniert nicht!!!
 }
 
 
 function closeImage() {
     addDisplayNone('image-viewer');
     removeOverflowYhidden('body');
+    enableButton('previous-button');
+    enableButton('next-button');
 }
 
 
@@ -464,6 +481,3 @@ function viewNextImage() {
     viewImage(++deliveredIndex);
     enableButton('previous-button');
 }
-
-
-// render image-viewer
