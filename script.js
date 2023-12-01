@@ -129,7 +129,7 @@ let images = [
     {
         'src': './img/flower.jpg',
         'alt': 'flower',
-        'category': ['photos', 'austria']
+        'category': ['photos', 'austria', 'trash']
     },
     {
         'src': './img/lake.jpg',
