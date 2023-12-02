@@ -1,25 +1,3 @@
-// let activeLink = 'photos';
-// let menuLinks = ['photos', 'favorites', 'bali', 'austria', 'trash'];
-
-
-// function decolorLink() {    // decolor current menu link
-//     for (let i = 0; i < menuLinks.length; i++) {
-//         document.getElementById(menuLinks[i]).classList.remove('menu-link-active');
-//     }
-// }
-
-
-// function colorLink(id) {    // color current menu link
-//     activeLink = id;
-//     decolorLink();
-//     document.getElementById(activeLink).classList.add('menu-link-active');
-// }
-
-
-
-
-
-
 let images = [
     {
         'src': './img/agriculture.jpg',
@@ -164,6 +142,7 @@ let deliveredIndex = 0;
 
 
 load();
+// setCategoryViewer();
 
 function loadImages() {
     let photoGallery = document.getElementById('photo-gallery');
@@ -183,9 +162,7 @@ function loadImages() {
 function showCategory(id) {
     category = id;
     colorLink(id);
-    setCategoryViewer();
-    getFirstViewerIndex();
-    getLastViewerIndex();
+    setImageViewer();
     return loadImages();
 }
 
@@ -259,33 +236,28 @@ function setFavorite() {
     if (getTheLastCategory(deliveredIndex) != 'favorites' && getTheLastCategory(deliveredIndex) != 'trash') {
         images[deliveredIndex]['category'].push('favorites');
         document.getElementById('favorite-button').innerHTML = 'Von Favoriten entfernen';
+        save();
+        loadImages();
     } else {
         if (getTheLastCategory(deliveredIndex) == 'favorites') {
             images[deliveredIndex]['category'].splice(images[deliveredIndex]['category'].length - 1, 1);
             document.getElementById('favorite-button').innerHTML = 'Zu Favoriten hinzufügen';
+            save();
+            loadImages();
+            setCategoryViewer();
+            viewNextImage();
         }
     }
-
-    save();
-    loadImages();
 }
 
 
 function deleteImage() {
     images[deliveredIndex]['category'].push('trash');
-
-    save();
-    loadImages();
-    closeImage();
 }
 
 
 function restoreImage(i) {
     images[deliveredIndex]['category'].splice(images[deliveredIndex]['category'].length - 1, 1);
-
-    save();
-    loadImages();
-    closeImage();
 }
 
 
@@ -296,9 +268,11 @@ function moveImage() {
         deleteImage();
     }
 
-    closeImage();
     save();
     loadImages();
+    setCategoryViewer();
+    viewNextImage();
+    // closeImage();
 }
 
 
@@ -358,6 +332,8 @@ function viewImage(i) {
     removeDisplayNone('image-viewer');
     showImage(i);
     deliveredIndex = i;
+
+    setButtonDisabledIf(i);    // neu
 
     setFavoriteButton();    // funktioniert nicht!!!
     setDeleteButton();    // funktioniert nicht!!!
@@ -431,6 +407,16 @@ function setButtonDisabled(id) {
 }
 
 
+function setButtonDisabledIf(i) {
+    if (i == firstViewerIndex) {
+        setButtonDisabled('previous-button');
+    }
+    if (i == lastViewerIndex) {
+        setButtonDisabled('next-button');
+    }
+}
+
+
 function setButtonenabled(id) {
     document.getElementById(id).disabled = false;
 }
@@ -476,6 +462,7 @@ function viewPreviousImage() {
     // isThatPreviousImageTrash();
     // viewImage(--deliveredIndex);
     // enableButton('next-button');
+    setImageViewer();
     viewLeftImage(--deliveredIndex);
 }
 
@@ -484,6 +471,7 @@ function viewNextImage() {
     // isThatNextImageTrash();
     // viewImage(++deliveredIndex);
     // enableButton('previous-button');
+    setImageViewer();
     viewRightImage(++deliveredIndex);
 }
 
@@ -491,11 +479,11 @@ function viewNextImage() {
 function setCategoryViewer() {
     for (let i = 0; i < images.length; i++) {
         setIndexOfCategory(i);
-    if (images[i]['category'][indexOfCategory] == category) {
-        images[i]['viewer'] = 'enabled';
-    } else {
-        images[i]['viewer'] = 'disabled';
-    }
+        if (images[i]['category'][indexOfCategory] == category) {
+            images[i]['viewer'] = 'enabled';
+        } else {
+            images[i]['viewer'] = 'disabled';
+        }
     }
 }
 
@@ -554,4 +542,11 @@ function getLastViewerIndex() {
             lastViewerIndex = i;
         }
     }
+}
+
+
+function setImageViewer() {
+    setCategoryViewer();
+    getFirstViewerIndex();
+    getLastViewerIndex();
 }
