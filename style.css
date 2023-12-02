@@ -22,8 +22,8 @@ header {
     align-items: center;
 }
 
-.header-title {
-    font-family: 'Product Sans', Arial, Helvetica, sans-serif;
+.header-title-txt {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
@@ -58,8 +58,7 @@ main {
 }
 
 .menu-container {
-    margin: 0 4px;
-    padding: 12px;
+    padding: 4px;
     width: 24px;
     height: 24px;
     border-radius: 100px;
@@ -129,8 +128,7 @@ main {
 
 #menu-bar {
     padding-top: 24px;
-    padding-right: 24px;
-    width: 232px;
+    width: 256px;
     height: calc(100vh - 88px);
     overflow-x: hidden;
     transition: all 125ms ease-in-out;
@@ -141,16 +139,17 @@ main {
 }
 
 .menu-bar:hover {
-    width: 280px;
+    width: 232px;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
     box-sizing: 4px 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .menu-bar-active {
-    width: 236px;
+    width: 256px;
 }
 
 .menu-link {
+    margin-right: 24px;
     padding: 8px 12px 8px 24px;
     text-decoration: none;
     display: flex;
@@ -161,49 +160,14 @@ main {
 
 .menu-bar:not(:hover) .menu-link-active:not(:hover) {
     border-radius: 0 100px 100px 0;
-    animation: 125ms menuLinkIn ease-in-out;
+    /* animation: 125ms menuLinkIn ease-in-out; */
 }
 
 .menu-bar-active:not(:hover) .menu-link-active:not(:hover) {
     border-radius: 0 100px 100px 0;
-    animation: none;
+    /* animation: none; */
 }
 
-html:not(:hover) .menu-bar:not(:hover) .menu-link-active:not(:hover) {
-    animation: none;
-}
-
-@keyframes menuLinkOut {
-    from {
-        width: 36px;
-        background-color: transparent;
-    }
-
-    to {
-        width: 280px;
-        background-color: #FEEFC3;
-    }
-}
-
-.flip-out-link {
-    animation: 125ms menuLinkOut ease-in-out;
-}
-
-@keyframes menuLinkIn {
-    from {
-        width: 280px;
-        background-color: #FEEFC3;
-    }
-
-    to {
-        width: 36px;
-        background-color: transparent;
-    }
-}
-
-.flip-in-link {
-    animation: 125ms menuLinkIn ease-in-out;
-}
 
 .menu-bar:hover .menu-link:hover {
     background-color: #F1F3F4;
@@ -213,13 +177,14 @@ html:not(:hover) .menu-bar:not(:hover) .menu-link-active:not(:hover) {
 .menu-link-active {
     background-color: #E8F0FE;
 }
+
 .menu-bar:hover .menu-link-active {
     background-color: #D2E3FC !important;
     border-radius: 0 100px 100px 0;
 }
 
 .highlighted {
-    background-color: #FEEFC3 !important;
+    background-color: #D2E3FC !important;
     border-radius: 0 100px 100px 0;
 }
 
@@ -228,7 +193,7 @@ html:not(:hover) .menu-bar:not(:hover) .menu-link-active:not(:hover) {
 }
 
 .img-active {
-    background-color: #FEEFC3 !important;
+    background-color: #D2E3FC !important;
 }
 
 .menu-txt {

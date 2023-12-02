@@ -101,3 +101,35 @@
     justify-content: space-between;
     align-items: center;
 }
+
+
+@media (max-width: 756px) {
+    .menu-container {
+        display: unset;
+    }
+
+    #menu-bar {
+        width: unset;
+        max-width: 232px;
+        position: absolute;
+        top: 64px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        background-color: white;
+    }
+
+    .menu-bar {
+        width: 0 !important;
+    }
+
+    .menu-bar-active {
+        width: calc(100% - 24px) !important;
+    }
+
+    .photo-gallery {
+        width: 100%;
+        justify-content: center;
+    }
+}

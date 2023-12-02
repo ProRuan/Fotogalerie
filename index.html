@@ -7,7 +7,9 @@
     <title>Fotogalerie</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="photo-gallery.css">
+    <link rel="stylesheet" href="./fonts/font-face.css">
     <script src="script.js"></script>
+    <script src="menu.js"></script>
 </head>
 
 <body id="body" onload="loadImages()">
@@ -28,11 +30,15 @@
 
         </div>
         <div id="image-viewer-navigation" class="image-viewer-navigation">
-            <button id="previous-button" class="image-viewer-close-button" onclick="viewPreviousImage()">Vorheriges</button>
+            <button id="previous-button" class="image-viewer-close-button"
+                onclick="viewPreviousImage()">Vorheriges</button>
             <button id="next-button" class="image-viewer-close-button" onclick="viewNextImage()">Nächstes</button>
         </div>
     </div>
     <header>
+        <div id="menu-container" class="menu-container display-none">
+            <img src="./img/main-menu.png" alt="main-menu" class="main-menu" onclick="flipMenu()">
+        </div>
         <a class="header-title" onclick="showCategory('photos')">
             <span class="header-title-txt">
                 <b class="violet">R</b><b class="blue">u</b><b class="green">a</b><b class="orange">n</b><b

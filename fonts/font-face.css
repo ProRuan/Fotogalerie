@@ -1,0 +1,94 @@
+/* Roboto */
+@font-face {
+    font-family: 'Roboto', Arial, sans-serif;
+    src: url('./roboto/RobotoCondensed-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto', Arial, sans-serif;
+    src: url('./roboto/RobotoCondensed-Italic-VariableFont_wght.ttf');
+}
+
+
+/* Product Sans */
+@font-face {
+    font-family: 'Product Sans Regular';
+    src: url('./fonts/google-sans/ProductSans-Regular.woff');
+}
+
+@font-face {
+    font-family: 'Product Sans Italic';
+    src: url('./fonts/google-sans/ProductSans-Italic.woff');
+}
+
+@font-face {
+    font-family: 'Product Sans Thin Regular';
+    src: url('./fonts/google-sans/ProductSans-Thin.woff');
+}
+
+@font-face {
+    font-family: 'Product Sans Light Regular';
+    src: url('./fonts/google-sans/ProductSans-Light.woff');
+}
+
+@font-face {
+    font-family: 'Product Sans Medium Regular';
+    src: url('./fonts/google-sans/ProductSans-Medium.woff');
+}
+
+@font-face {
+    font-family: 'Product Sans Black Regular';
+    src: url('./fonts/google-sans/ProductSans-Black.woff');
+}
+
+@font-face {
+    font-family: 'Product Sans Thin Italic';
+    src: url('./fonts/google-sans/ProductSans-ThinItalic.woff');
+}
+
+@font-face {
+    font-family: 'Product Sans Light Italic';
+    src: url('./fonts/google-sans/ProductSans-LightItalic.woff');
+}
+
+@font-face {
+    font-family: 'Product Sans Medium Italic';
+    src: url('./fonts/google-sans/ProductSans-MediumItalic.woff');
+}
+
+@font-face {
+    font-family: 'Product Sans Bold';
+    src: url('./fonts/google-sans/ProductSans-Bold.woff');
+}
+
+@font-face {
+    font-family: 'Product Sans Bold Italic';
+    src: url('./fonts/google-sans/ProductSans-Italic.woff');
+}
+
+@font-face {
+    font-family: 'Product Sans Black Italic';
+    src: url('./fonts/google-sans/ProductSans-BlackItalic.woff');
+}
+
+
+/* PT Sans */
+@font-face {
+    font-family: 'PT Sans', sans-serif;
+    src: url('./PTSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'PT Sans', sans-serif;
+    src: url('./PTSans-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'PT Sans', sans-serif;
+    src: url('./PTSans-Italic.ttf');
+}
+
+@font-face {
+    font-family: 'PT Sans', sans-serif;
+    src: url('./PTSans-Regular.ttf');
+}

@@ -1,19 +1,19 @@
-let activeLink = 'photos';
-let menuLinks = ['photos', 'favorites', 'bali', 'austria', 'trash'];
+// let activeLink = 'photos';
+// let menuLinks = ['photos', 'favorites', 'bali', 'austria', 'trash'];
 
 
-function decolorLink() {    // decolor current menu link
-    for (let i = 0; i < menuLinks.length; i++) {
-        document.getElementById(menuLinks[i]).classList.remove('menu-link-active');
-    }
-}
+// function decolorLink() {    // decolor current menu link
+//     for (let i = 0; i < menuLinks.length; i++) {
+//         document.getElementById(menuLinks[i]).classList.remove('menu-link-active');
+//     }
+// }
 
 
-function colorLink(id) {    // color current menu link
-    activeLink = id;
-    decolorLink();
-    document.getElementById(activeLink).classList.add('menu-link-active');
-}
+// function colorLink(id) {    // color current menu link
+//     activeLink = id;
+//     decolorLink();
+//     document.getElementById(activeLink).classList.add('menu-link-active');
+// }
 
 
 
