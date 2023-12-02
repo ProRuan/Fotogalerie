@@ -162,6 +162,11 @@ function loadImages() {
 function showCategory(id) {
     category = id;
     colorLink(id);
+    if (category == 'trash') {
+        addDisplayNone('favorite-button');
+    } else {
+        removeDisplayNone('favorite-button');
+    }
     setImageViewer();
     return loadImages();
 }
@@ -245,7 +250,17 @@ function setFavorite() {
             save();
             loadImages();
             setCategoryViewer();
-            viewNextImage();
+            if (category == 'favorites') {
+                if (deliveredIndex != lastViewerIndex) {
+                    viewNextImage();
+                } else {
+                    if (deliveredIndex != firstViewerIndex) {
+                        viewPreviousImage();
+                    } else  {
+                        closeImage();
+                    }
+                }
+            }
         }
     }
 }
@@ -271,7 +286,15 @@ function moveImage() {
     save();
     loadImages();
     setCategoryViewer();
-    viewNextImage();
+    if (deliveredIndex != lastViewerIndex) {
+        viewNextImage();
+    } else {
+        if (deliveredIndex != firstViewerIndex) {
+            viewPreviousImage();
+        } else  {
+            closeImage();
+        }
+    }
     // closeImage();
 }
 

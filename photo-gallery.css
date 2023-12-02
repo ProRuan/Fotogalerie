@@ -87,6 +87,27 @@
     cursor: unset;
 }
 
+.image-viewer-favorite-button {
+    padding: 4px 16px;
+    font-size: 16px;
+    font-weight: 400px;
+    line-height: 20px;
+    color: white;
+    background-color: rgba(255, 255, 0, 0.24);
+    border: unset;
+    border-radius: 10px;
+}
+
+.image-viewer-favorite-button:hover {
+    background-color: rgba(255, 255, 0, 0.32);
+}
+
+.image-viewer-favorite-button:disabled {
+    color: lightgray;
+    background-color: rgba(255, 255, 0, 0.16);
+    cursor: unset;
+}
+
 .image-viewer-button-group {
     display: flex;
     justify-content: flex-end;
