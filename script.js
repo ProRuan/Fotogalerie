@@ -487,6 +487,9 @@ function viewPreviousImage() {
     // enableButton('next-button');
     setImageViewer();
     viewLeftImage(--deliveredIndex);
+    if (deliveredIndex == lastViewerIndex) {
+        setButtonDisabled('next-button');
+    }
 }
 
 
@@ -496,6 +499,9 @@ function viewNextImage() {
     // enableButton('previous-button');
     setImageViewer();
     viewRightImage(++deliveredIndex);
+    if (deliveredIndex == firstViewerIndex) {
+        setButtonDisabled('previous-button');
+    }
 }
 
 
