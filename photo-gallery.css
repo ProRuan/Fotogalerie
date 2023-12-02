@@ -38,10 +38,12 @@
 }
 
 .image-viewer-content {
-    width: calc(100% - 160px);
-    max-width: 1280px;
-    height: calc(100vh - 155px);
-    max-height: 768px;
+    /* width: calc(100% - 160px);
+    max-width: 1280px; */
+    width: 1280px;
+    /* height: calc(100vh - 155px);
+    max-height: 768px; */
+    height: 768px;
     object-fit: cover;
     object-position: center;
     display: flex;
@@ -126,10 +128,45 @@
 
 
 
-@media (max-width: 1280px) {
+@media (max-width: 1500px) {
     .image-viewer-content {
-        width: calc(100% - 48px);
-        /* height bearbeiten */
+        max-width: 1080px;
+        max-height: 648px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .image-viewer-content {
+        max-width: 800px;
+        max-height: 480px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .image-viewer-content {
+        max-width: 600px;
+        max-height: 360px;
+    }
+}
+
+@media (max-width: 800px) {
+    .image-viewer-content {
+        max-width: 480px;
+        max-height: 288px;
+    }
+}
+
+@media (max-width: 600px) {
+    .image-viewer-content {
+        max-width: 360px;
+        max-height: 216px;
+    }
+}
+
+@media (max-width: 400px) {
+    .image-viewer-content {
+        max-width: 280px;
+        max-height: 168px;
     }
 }
 
