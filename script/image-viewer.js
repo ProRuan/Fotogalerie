@@ -291,30 +291,6 @@ function setImageViewer() {    // prepares all settings for the 'image-viewer'
 }
 
 
-function isThatPreviousImageTrash() {    // ???
-    if (deliveredIndex - 1 > 0) {
-        if (getTheLastCategory(deliveredIndex - 1) == 'trash') {
-            deliveredIndex--;
-            isThatPreviousImageTrash();
-        }
-    } else {
-        setButtonDisabled('previous-button');
-    }
-}
-
-
-function isThatNextImageTrash() {    // ???
-    if (deliveredIndex + 1 < images.length - 1) {
-        if (getTheLastCategory(deliveredIndex + 1) == 'trash') {
-            deliveredIndex++;
-            isThatNextImageTrash();
-        }
-    } else {
-        setButtonDisabled('next-button');
-    }
-}
-
-
 function isViewerEnabled(i) {    // returns true, if the image i is enabled for the 'image-viewer'
     if (images[i]['viewer'] == 'enabled') {
         return true;

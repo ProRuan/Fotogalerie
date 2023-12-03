@@ -238,7 +238,7 @@ function showCategory(id) {    // shows the images of the requested category
     category = id;
     colorLink(id);
     hideFavoriteButtonIf();
-    setImageViewer();    // notwendig?
+    setImageViewer();
     return loadImages();
 }
 
