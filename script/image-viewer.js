@@ -4,6 +4,10 @@ let firstViewerIndex = -1;
 let lastViewerIndex = -1;
 
 
+// Rendering
+setImageViewer();
+
+
 // Functions
 function removeDisplayNone(id) {    // removes display:none from an element
     document.getElementById(id).classList.remove('display-none');
