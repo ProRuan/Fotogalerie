@@ -1,0 +1,84 @@
+@media (max-width: 1500px) {
+    .image-viewer-content {
+        max-width: 1080px;
+        max-height: 648px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .image-viewer-content {
+        max-width: 800px;
+        max-height: 480px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .image-viewer-content {
+        max-width: 600px;
+        max-height: 360px;
+    }
+}
+
+@media (max-width: 800px) {
+    .image-viewer-content {
+        max-width: 480px;
+        max-height: 288px;
+    }
+
+    .image-viewer-close-button {
+        padding: 4px 16px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .image-viewer-favorite-button {
+        padding: 4px 16px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .image-viewer-content {
+        max-width: 360px;
+        max-height: 216px;
+    }
+}
+
+@media (max-width: 400px) {
+    .image-viewer-content {
+        max-width: 288px;
+        max-height: 172.8px;
+    }
+}
+
+@media (max-width: 756px) {
+    .menu-container {
+        display: unset;
+    }
+
+    #menu-bar {
+        width: unset;
+        max-width: 232px;
+        position: absolute;
+        top: 64px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        background-color: white;
+    }
+
+    .menu-bar {
+        width: 0 !important;
+    }
+
+    .menu-bar-active {
+        width: calc(100% - 24px) !important;
+    }
+
+    .photo-gallery {
+        width: 100%;
+        justify-content: center;
+    }
+}
