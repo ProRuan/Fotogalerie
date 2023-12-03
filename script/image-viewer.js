@@ -64,9 +64,9 @@ function isThisAFavorite() {    // returns true, if the image's last category is
 
 function setFavoriteButton() {    // provides the appropriate text for the image's favorite state
     if (isThisAFavorite()) {
-        document.getElementById('favorite-button').innerHTML = '+ Favorit';
-    } else {
         document.getElementById('favorite-button').innerHTML = '- Favorit';
+    } else {
+        document.getElementById('favorite-button').innerHTML = '+ Favorit';
     }
 }
 
