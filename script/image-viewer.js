@@ -60,9 +60,9 @@ function isThisAFavorite() {    // returns true, if the image's last category is
 
 function setFavoriteButton() {    // provides the appropriate text for the image's favorite state
     if (isThisAFavorite()) {
-        document.getElementById('favorite-button').innerHTML = 'von Favoriten entfernen';
+        document.getElementById('favorite-button').innerHTML = '+ Favorit';
     } else {
-        document.getElementById('favorite-button').innerHTML = 'zu Favoriten hinzufügen';
+        document.getElementById('favorite-button').innerHTML = '- Favorit';
     }
 }
 
@@ -159,13 +159,13 @@ function isNotTrash() {    // returns true, if this image is not 'trash'
 
 function pushAFavorite() {    // adds a new favorite and adjusts the 'favorite-button'
     images[deliveredIndex]['category'].push('favorites');
-    document.getElementById('favorite-button').innerHTML = 'Von Favoriten entfernen';
+    document.getElementById('favorite-button').innerHTML = '- Favorit';
 }
 
 
 function spliceAFavorite() {    // removes a favorite and adjusts the 'favorite-button'
     images[deliveredIndex]['category'].splice(images[deliveredIndex]['category'].length - 1, 1);
-    document.getElementById('favorite-button').innerHTML = 'Zu Favoriten hinzufügen';
+    document.getElementById('favorite-button').innerHTML = '+ Favorit';
 }
 
 

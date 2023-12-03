@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fotogalerie</title>
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/photo-gallery.css">
     <link rel="stylesheet" href="./fonts/font-face.css">
@@ -18,24 +19,26 @@
 
     <div id="image-viewer" class="image-viewer display-none">
         <div id="image-viewer-header" class="image-viewer-header">
-            <button id="image-viewer-close-button" class="image-viewer-close-button"
-                onclick="closeImage()">Zurück</button>
-            <div id="image-viewer-button-group" class="image-viewer-button-group">
-                <button id="favorite-button" class="image-viewer-favorite-button" onclick="setFavorite()">
-                    Als Favorit festlegen
-                </button>
-                <button id="delete-button" class="image-viewer-close-button" onclick="moveImage()">
-                    Löschen
-                </button>
-            </div>
+            <button id="image-viewer-close-button" class="image-viewer-button" onclick="closeImage()">
+                Zurück
+            </button>
+            <button id="favorite-button" class="image-viewer-favorite-button" onclick="setFavorite()">
+                Als Favorit festlegen
+            </button>
+            <button id="delete-button" class="image-viewer-button" onclick="moveImage()">
+                Löschen
+            </button>
         </div>
         <div id="image-viewer-content" class="image-viewer-content">
 
         </div>
         <div id="image-viewer-navigation" class="image-viewer-navigation">
-            <button id="previous-button" class="image-viewer-close-button"
-                onclick="viewPreviousImage()">Vorheriges</button>
-            <button id="next-button" class="image-viewer-close-button" onclick="viewNextImage()">Nächstes</button>
+            <button id="previous-button" class="image-viewer-button" onclick="viewPreviousImage()">
+                Vorheriges
+            </button>
+            <button id="next-button" class="image-viewer-button" onclick="viewNextImage()">
+                Nächstes
+            </button>
         </div>
     </div>
 
