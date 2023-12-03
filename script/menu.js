@@ -1,15 +1,13 @@
-// Variables - Menu Bar
-let menuActive = false;    // Is the flip menu opened? (false or true)
-let activeLink = 'photos';
-let menuLinks = ['photos', 'favorites', 'bali', 'austria', 'trash'];
-
-
-// Variables - Rendering
+// Menu Bar
+// Variables
+let menuActive = false;    // true - if the flip menu is opened
+let activeLink = 'photos';    // contains the current link's id
+let menuLinks = ['photos', 'favorites', 'bali', 'austria', 'trash'];    // contains the available menu links (categories)
 let elements = [];    // auxiliary variable
 
 
-// Functions - Menu Bar
-function highlightMenuLink() {    // add the color to the current menu link on fliping out the menu
+// Functions
+function highlightMenuLink() {    // adds the color to the current menu link on fliping out the menu
     document.getElementById(activeLink).classList.add('highlighted');
 }
 
@@ -21,26 +19,24 @@ function unhighlightMenuLink() {    // remove the color of the current menu link
 }
 
 
-function activateMenuBar() {    // provides the current link with the class for same-named hover
+function activateMenuBar() {    // provides the current link with the class for the same-named hover
     document.getElementById('menu-bar').classList.add('menu-bar-active');
 }
 
 
-function deactivateMenuBar() {    // removes the class for the same-named hover ot the current link
+function deactivateMenuBar() {    // removes the class for the same-named hover of the current link
     document.getElementById('menu-bar').classList.remove('menu-bar-active');
 }
 
 
 function flipOutMenu() {    // flips out the menu
     activateMenuBar();
-    // highlightMenuLink();
     menuActive = true;
 }
 
 
 function flipInMenu() {    // flips in the menu
     deactivateMenuBar();
-    // unhighlightMenuLink();
     menuActive = false;
 }
 
@@ -76,28 +72,28 @@ function flipMenu() {    // switches the state of the flip menu
 }
 
 
-function decolorLink() {    // decolor current menu link
+function decolorLink() {    // decolors current menu link
     for (let i = 0; i < menuLinks.length; i++) {
         document.getElementById(menuLinks[i]).classList.remove('menu-link-active');
     }
 }
 
 
-function colorLink(id) {    // color current menu link
+function colorLink(id) {    // colors current menu link
     activeLink = id;
     decolorLink();
     document.getElementById(activeLink).classList.add('menu-link-active');
 }
 
 
-function decolorIMG() {    // decolor image of current menu link
+function decolorIMG() {    // decolors image of current menu link
     for (let i = 0; i < menuLinks.length; i++) {
         document.getElementById(`${menuLinks[i]}-img`).classList.remove('img-active');
     }
 }
 
 
-function colorIMG(id) {    // color image of current menu link
+function colorIMG(id) {    // colors image of current menu link
     decolorIMG();
     document.getElementById(`${id}-img`).classList.add('img-active');
 }

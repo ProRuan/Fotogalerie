@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="./media-query/media-query.css">
     <script src="./script/script.js"></script>
     <script src="./script/menu.js"></script>
+    <script src="./script/render.js"></script>
+    <script src="./script/image-viewer.js"></script>
 </head>
 
 <body id="body" onload="loadImages()">
+
     <div id="image-viewer" class="image-viewer display-none">
         <div id="image-viewer-header" class="image-viewer-header">
             <button id="image-viewer-close-button" class="image-viewer-close-button"
@@ -36,6 +39,7 @@
             <button id="next-button" class="image-viewer-close-button" onclick="viewNextImage()">Nächstes</button>
         </div>
     </div>
+
     <header>
         <div id="menu-container" class="menu-container display-none">
             <img src="./img/main-menu.png" alt="main-menu" class="main-menu" onclick="flipMenu()">
@@ -56,24 +60,24 @@
 
     <main>
         <nav id="menu-bar" class="menu-bar">
-            <a id="photos" href="#" class="menu-link menu-link-active" onclick="showCategory(id)">
-                <img id="notes-img" src="./img/link-img.png" alt="bulb-notes" class="img img-active">
+            <a id="photos" class="menu-link menu-link-active" onclick="showCategory(id)">
+                <img id="photos-img" src="./img/link-img.png" alt="menu-img" class="img img-active">
                 <span class="menu-txt">Notizen</span>
             </a>
-            <a id="favorites" href="#" class="menu-link" onclick="showCategory(id)">
-                <img id="notes-img" src="./img/link-img.png" alt="bulb-notes" class="img img-active">
+            <a id="favorites" class="menu-link" onclick="showCategory(id)">
+                <img id="favorites-img" src="./img/link-img.png" alt="menu-img" class="img img-active">
                 <span class="menu-txt">Favoriten</span>
             </a>
-            <a id="bali" href="#" class="menu-link" onclick="showCategory(id)">
-                <img id="notes-img" src="./img/link-img.png" alt="bulb-notes" class="img img-active">
+            <a id="bali" class="menu-link" onclick="showCategory(id)">
+                <img id="bali-img" src="./img/link-img.png" alt="menu-img" class="img img-active">
                 <span class="menu-txt">Bali</span>
             </a>
-            <a id="austria" href="#" class="menu-link" onclick="showCategory(id)">
-                <img id="notes-img" src="./img/link-img.png" alt="bulb-notes" class="img img-active">
+            <a id="austria" class="menu-link" onclick="showCategory(id)">
+                <img id="austria-img" src="./img/link-img.png" alt="menu-img" class="img img-active">
                 <span class="menu-txt">Österreich</span>
             </a>
-            <a id="trash" href="#" class="menu-link" onclick="showCategory(id)">
-                <img id="trash-img" src="./img/trash.png" alt="trash-notes" class="img">
+            <a id="trash" class="menu-link" onclick="showCategory(id)">
+                <img id="trash-img" src="./img/trash.png" alt="trash-img" class="img">
                 <span class="menu-txt">Papierkorb</span>
             </a>
         </nav>
@@ -82,6 +86,7 @@
 
         </section>
     </main>
+
 </body>
 
 </html>

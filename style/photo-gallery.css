@@ -10,17 +10,13 @@
 .image-box {
     width: 232px;
     height: 232px;
+    border-radius: 10px;
     object-fit: cover;
     object-position: center;
 }
 
 .image-box:hover {
     filter: brightness(84%);
-}
-
-.image-box img {
-    object-fit: contain;
-    object-position: center;
 }
 
 .image-viewer {
