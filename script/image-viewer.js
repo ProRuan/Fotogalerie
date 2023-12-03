@@ -1,4 +1,9 @@
 // image-viewer
+// Variables
+let firstViewerIndex = -1;
+let lastViewerIndex = -1;
+
+
 // Functions
 function removeDisplayNone(id) {    // removes display:none from an element
     document.getElementById(id).classList.remove('display-none');
@@ -206,9 +211,9 @@ function restoreImage(i) {    // restore the image
 
 function moveImage() {    // moves the image
     if (category == 'trash') {
-        restoreImage();    
+        restoreImage();
     } else {
-        deleteImage();    
+        deleteImage();
     }
     processesMovingOfImage();
 }
@@ -231,5 +236,133 @@ function showNext() {
         } else {
             closeImage();
         }
+    }
+}
+
+
+function setPreviousButton() {    // disables the 'previous-button', if the delivered Index is 0
+    if (deliveredIndex == 0) {
+        setButtonDisabled('previous-button');
+    }
+}
+
+
+function setNextButton() {    // disables the next button, if the delivered index is the last
+    if (deliveredIndex == images.length - 1) {
+        setButtonDisabled('next-button');
+    }
+}
+
+
+function setCategoryViewer() {    // enables all images of the requested category for the 'image-viewer' 
+    for (let i = 0; i < images.length; i++) {
+        setIndexOfCategory(i);
+        if (images[i]['category'][indexOfCategory] == category) {
+            images[i]['viewer'] = 'enabled';
+        } else {
+            images[i]['viewer'] = 'disabled';
+        }
+    }
+}
+
+
+function getFirstViewerIndex() {    // provides the first index of the requested category
+    for (let i = images.length - 1; i > -1; i--) {
+        if (images[i]['viewer'] == 'enabled') {
+            firstViewerIndex = i;
+        }
+    }
+}
+
+
+function getLastViewerIndex() {    // provides the last index of the requested category
+    for (let i = 0; i < images.length; i++) {
+        if (images[i]['viewer'] == 'enabled') {
+            lastViewerIndex = i;
+        }
+    }
+}
+
+
+function setImageViewer() {    // prepares all settings for the 'image-viewer'
+    setCategoryViewer();
+    getFirstViewerIndex();
+    getLastViewerIndex();
+}
+
+
+function isThatPreviousImageTrash() {    // ???
+    if (deliveredIndex - 1 > 0) {
+        if (getTheLastCategory(deliveredIndex - 1) == 'trash') {
+            deliveredIndex--;
+            isThatPreviousImageTrash();
+        }
+    } else {
+        setButtonDisabled('previous-button');
+    }
+}
+
+
+function isThatNextImageTrash() {    // ???
+    if (deliveredIndex + 1 < images.length - 1) {
+        if (getTheLastCategory(deliveredIndex + 1) == 'trash') {
+            deliveredIndex++;
+            isThatNextImageTrash();
+        }
+    } else {
+        setButtonDisabled('next-button');
+    }
+}
+
+
+function isViewerEnabled(i) {    // returns true, if the image i is enabled for the 'image-viewer'
+    if (images[i]['viewer'] == 'enabled') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+function viewLeftImage(i) {    // shows the previous immage which is part of the requested category
+    if (isViewerEnabled(i)) {
+        viewImage(i);
+        enableButton('next-button');
+        if (i == firstViewerIndex) {
+            setButtonDisabled('previous-button');
+        }
+    } else {
+        viewPreviousImage(--i);
+    }
+}
+
+
+function viewRightImage(i) {    // shows the next image which is part of the requested category
+    if (isViewerEnabled(i)) {
+        viewImage(i);
+        enableButton('previous-button');
+        if (i == lastViewerIndex) {
+            setButtonDisabled('next-button');
+        }
+    } else {
+        viewNextImage(++i);
+    }
+}
+
+
+function viewPreviousImage() {    // shows the previous image of the requested category
+    setImageViewer();
+    viewLeftImage(--deliveredIndex);
+    if (deliveredIndex == lastViewerIndex) {
+        setButtonDisabled('next-button');
+    }
+}
+
+
+function viewNextImage() {    // shows the next image of the requested category
+    setImageViewer();
+    viewRightImage(++deliveredIndex);
+    if (deliveredIndex == firstViewerIndex) {
+        setButtonDisabled('previous-button');
     }
 }
